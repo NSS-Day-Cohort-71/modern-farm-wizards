@@ -1,14 +1,12 @@
 export const harvestPlants = (seedsPlanted) => {
-  let harvest = [];
+  const harvest = [];
   for (const plant of seedsPlanted) {
-    if (plant.type === "corn") {
-      for (let i = 0; i <= plant.output; i++) {
-        harvest.push(plant);
-      }
-    } else {
-      for (let i = 0; i <= plant.output; i++) {
-        harvest.push(plant);
-      }
+    let outputCount = plant.output;
+    if (plant.type.toLowerCase() === "corn") {
+      outputCount = Math.ceil(outputCount / 2);
+    }
+    for (let i = 0; i < outputCount; i++) {
+      harvest.push(plant);
     }
   }
   return harvest;
