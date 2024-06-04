@@ -6,17 +6,7 @@ import { plantSeeds } from "./tractor.js";
 const yearlyPlan = createPlan();
 let seedsPlanted = plantSeeds(yearlyPlan);
 let plantsHarvested = harvestPlants(seedsPlanted);
-// let foodCatalog = catalog(plantsHarvested);
-// renderToDOM(foodCatalog);
 
-// scripts/main.js
-// import { Catalog } from "./catalog.js";
-
-let foods = [
-  { name: "Corn" },
-  { name: "Wheat" },
-  { name: "Rice" },
-  // Add more food objects as needed
-];
+let foods = [{ name: "Corn" }, { name: "Wheat" }, { name: "Rice" }];
 
 catalog(plantsHarvested);
