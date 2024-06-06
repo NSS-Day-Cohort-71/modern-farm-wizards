@@ -9,4 +9,19 @@ let plantsHarvested = harvestPlants(seedsPlanted);
 
 let foods = [{ name: "Corn" }, { name: "Wheat" }, { name: "Rice" }];
 
-catalog(plantsHarvested);
+// let alphabetical = plantsHarvested.sort()
+// catalog(alphabetical);
+
+plantsHarvested.sort((a, b) => {
+    if (a.type < b.type) {
+      return -1;
+    }
+    if (a.type > b.type) {
+      return 1;
+    }
+    return 0;
+  });
+  console.log("Sorted Plants Harvested:", plantsHarvested);
+  
+  // Display the sorted harvested plants in the catalog
+  catalog(plantsHarvested);
