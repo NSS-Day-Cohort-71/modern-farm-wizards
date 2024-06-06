@@ -13,8 +13,35 @@ export const catalog = (foods) => {
 
   // Generate HTML representation for each plant type and its quantity
   let foodHTML = "";
-  for (let type in plantAmount) {
-    foodHTML += `<section class="plant">${type} - Amount: ${plantAmount[type]}</section>`;
+
+  for (let type in plantQuantities) {
+    // Get the emoji for the plant type
+    let emoji = "";
+    switch (type.toLowerCase()) {
+      case "corn":
+        emoji = "🌽";
+        break;
+      case "asparagus":
+        emoji = "🌱";
+        break;
+      case "potato":
+        emoji = "🥔";
+        break;
+      case "soybean":
+        emoji = "🌱";
+        break;
+      case "sunflower":
+        emoji = "🌻";
+        break;
+      case "wheat":
+        emoji = "🌾";
+        break;
+      default:
+        emoji = "";
+    }
+    // Construct the HTML representation
+    foodHTML += `<section class="plant">${emoji} ${type} - Quantity: ${plantQuantities[type]}</section>`;
+
   }
 
   // Display the HTML representation in the container
